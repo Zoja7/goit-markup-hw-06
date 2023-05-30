@@ -182,7 +182,6 @@ img {
     background-color: var(--accent-color);
 }
 
-
 .hero-title {
     margin-top: 0;
     margin-left: auto;
@@ -502,7 +501,7 @@ img {
 }
 
 .footer-content{
-    margin-right: 120px
+    padding-right: 120px;
 }
 
 .footer-logo-web{
@@ -578,6 +577,7 @@ img {
     fill: var(--second-color);
 }
 
+/*===Footer-submit-form===*/
 .footer-subscribe {
     padding-left: 80px;
    
@@ -595,26 +595,27 @@ img {
 .subscribe-form{
     display: flex;
     justify-content: space-between;
-    column-gap: 24px;
+    gap: 24px;
 }
 
-.subscribe-form-input {
-    
+.subscribe-form-input { 
     width: 264px;
+    height: 40px;
     padding-left: 16px;
     padding-top: 8px;
     padding-bottom: 8px;
 
-   
     border: 1px solid #FFFFFF;
     outline: none;
     border-radius: 4px;
 
     background-color: var(--accent-color);
-
+    background-color: transparent;
     font-size: 12px;
-    line-height: 2;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
     color: #FFFFFF;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
 
     transition: border-color var(--transition-duration-and-func);
 }
@@ -636,7 +637,6 @@ img {
 .subscribe-btn {
    
     display: flex;
- 
     justify-content: center;
     align-items: center;
     padding: 8px 24px;
@@ -663,6 +663,7 @@ img {
 
 .subscribe-btn-icon{
     fill:#FFFFFF;
+    margin-left: 16px;
 }
 .subscribe-btn:hover,
 .subscribe-btn:focus {
@@ -909,7 +910,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
 .contact-form-field-desc {
     display: block;
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: #8E8F99;
     margin-bottom: 4px;
@@ -929,6 +930,10 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     font-size: 12px;
     line-height: 1.2;
     letter-spacing: 0.04em;
+
+    outline: transparent;
+    background-color: transparent;
+    transition: border-color var(--transition-duration-and-func);
 }
 
 .contact-form-input:focus {
@@ -950,24 +955,31 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     transition: fill var(--transition-duration-and-func);  
 }
 
+.user-message{
+    margin-bottom: 16px;
+}
 .contact-form-message {
     width: 100%;
-    height: 100px;
+    height: 120px;
     resize: none;
-    padding-left: 16px;
-    padding-top: 8px;
-    padding-right: 16px;
+   
+    padding: 8px 16px;
 
     font-size: 12px;
-    line-height: 1.2;
+    line-height: 1.17;
     letter-spacing: 0.04em;
+
+    color: rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+
+    outline: transparent;
 
     border: 1px solid rgba(46, 47, 66, 0.4);
     border-radius: 4px;
     transition: border-color var(--transition-duration-and-func);
 }
 .contact-form-message:focus {
-    outline: none;
+   
     border-color: var(--logo-color);
 
 }
@@ -984,55 +996,62 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     display: flex;
     align-items: center;  
 }
-
-.contact-form-checkbox {
-    appearance: none;
-    position: absolute;
-
-}
-
-.contact-form-checkbox-wrapper{
+.contact-form-checkbox-wrapper {
     margin-top: 16px;
     margin-bottom: 24px;
 }
-.contact-form-checkbox-icon {
-    border: 1px solid rgba(46, 47, 66, 0.4);
-    border-radius: 2px;
-    padding: 3px;
-    cursor: pointer;
+.contact-form-checkbox {
+    appearance: none;
+    position: absolute;
+}
+
+.contact-form-checkbox-label {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: var(--icon-color);
+}
+
+.conact-form-checkbox-own{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+
     width: 16px;
     height: 16px;
-    margin-right: 8px;  
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    transition: background-color var(--transition-duration-and-func), 
+                border var(--transition-duration-and-func), 
+                fill var(--transition-duration-and-func);
+
+}
+
+.contact-form-checkbox-icon {
+  
+    cursor: pointer;
     
 }
 
-.contact-form-checkmark-icon {
-    fill: #F4F4FD;
-    opacity: 0;
-    
-}
+.contact-form-checkbox:checked + .contact-form-checkbox-label > .conact-form-checkbox-own{
 
-.contact-form-checkbox:checked +  .contact-form-checkbox-icon > .contact-form-checkmark-icon {
-    opacity: 1;
-       
-}
-.contact-form-checkbox:checked + .contact-form-checkbox-icon{
-    background-color: #404BBF;
-}
-.contact-form-checkbox:focus+ .contact-form-checkbox-icon {
-    border-color: #404BBF;   
+    background-color: var(--hover-color);
+    border: none;
+    fill: var(--fourth-color);
 }
 
 .contact-form-checkbox-desc {
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.04em;
-    color: #8E8F99;
+    color: var(--icon-color);
 }
 
 .conact-form-checkbox-link{
+  
     font-size: 12px;
-    line-height: 14px;
+    line-height: 1.7px;
     letter-spacing: 0.04em;
     color: #4D5AE5;
     text-decoration:underline ;

@@ -594,7 +594,7 @@ img {
 
 .subscribe-form{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     column-gap: 24px;
 }
 
